@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+.title {
+    text-align: center;
+    color: #383838;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+hr {
+    margin: 0 auto;
+    background-color: #F5BD41;
+    border: none;
+    width: 100px;
+    height: 4px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+.offers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.offer {
+    width: 296px;
+    height: 176px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-offer {
+    margin-bottom: 48px;
+}
+
+.basic-text {
+    font-size: 24px;
+    color: #383838;
+    text-align: center;
+}
