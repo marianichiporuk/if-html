@@ -32,25 +32,9 @@ hr {
   padding: 120px 104px;
 }
 
-.offer-block {
-  height: 569px;
-}
-
-.row-flex {
+.row {
   display: flex;
   justify-content: space-between;
-}
-
-.offer {
-  width: 296px;
-  height: 176px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.img-offer {
-  margin-bottom: 48px;
 }
 
 .basic-text {
@@ -66,6 +50,145 @@ hr {
 
 .bold-text {
   font-weight: 500;
+}
+
+.header-container {
+  min-height: 100vh;
+  padding-top: 50px;
+  background-image: url("../images/topsection-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  margin-bottom: 202px;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.header-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 24px;
+}
+
+.menu-item {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.active {
+  border-bottom: 4px solid #f5bd41;
+  padding-bottom: 12px;
+}
+
+.header-icons {
+  align-items: center;
+  gap: 24px;
+}
+
+.head-icon {
+  display: flex;
+}
+
+.heading {
+  font-size: 50px;
+  color: #ffffff;
+  line-height: 59px;
+  width: 542px;
+  margin-bottom: 100px;
+}
+
+.form {
+  margin-bottom: 120px;
+}
+
+.form-labels {
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.destination-label {
+  margin-left: 24px;
+  margin-right: 221px;
+}
+
+.form-block {
+  height: 64px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.input {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #383838;
+  padding: 24px;
+}
+
+.destination {
+  border: none;
+  border-radius: 8px;
+  flex-grow: 1;
+}
+
+.dates {
+  min-width: 259px;
+  border: 3px solid #f5bd41;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.guests {
+  min-width: 314px;
+  border: none;
+  text-align: center;
+}
+
+.search-button {
+  width: 192px;
+  background: #3077c6;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.apps {
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+}
+
+.offer-block {
+  height: 570px;
+}
+
+.offer {
+  width: 296px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-offer {
+  margin-bottom: 48px;
 }
 
 .footer-text {

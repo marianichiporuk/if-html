@@ -6,11 +6,85 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
+    <header>
+      <div class="header-container container">
+        <div class="header row">
+          <div class="logo">
+            <img src="./images/logo-triphouse.png" alt="TripHouse" />
+          </div>
+          <div class="header-info">
+            <div class="header-menu basic-text">
+              <ul class="header-menu">
+                <li><a class="menu-item active" href="#">Stays</a></li>
+                <li><a class="menu-item" href="#">Attractions</a></li>
+              </ul>
+            </div>
+            <div class="header-icons row">
+              <a href="#"
+                ><img
+                  class="head-icon"
+                  src="./images/night.png"
+                  alt="Night mode"
+              /></a>
+              <a href="#"
+                ><img
+                  class="head-icon"
+                  src="./images/account-circle.png"
+                  alt="Account"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="main-page">
+          <h1 class="heading bold-text">
+            Discover stays <br />
+            to live, work or just relax
+          </h1>
+          <form class="form" action="">
+            <div class="form-labels">
+              <label class="destination-label" for="destination"
+                >Your destination or hotel name</label
+              >
+              <label class="dates-label" for="check-in-check-out"
+                >Check-in — Check-out</label
+              >
+            </div>
+            <div class="form-block row">
+              <input
+                class="input destination"
+                id="destination"
+                type="text"
+                name="city"
+                value="New York"
+              />
+              <input
+                class="input dates"
+                id="check-in-check-out"
+                type="text"
+                name="date"
+                value="Tue 15 Sept — Sat 19 Sept"
+              />
+              <input
+                class="input guests"
+                type="text"
+                name="guests"
+                value="2 Adults — 0 Children — 1 Room"
+              />
+              <button class="search-button basic-text">Search</button>
+            </div>
+          </form>
+          <div class="apps">
+            <img src="./images/google-play.png" alt="Google Play" />
+            <img src="./images/app-store.png" alt="App Store" />
+          </div>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="container offer-block">
         <h2 class="title bold-text">What do we offer</h2>
         <hr />
-        <div class="row-flex">
+        <div class="row">
           <div class="offer">
             <img
               class="img-offer"
