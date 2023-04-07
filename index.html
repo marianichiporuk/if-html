@@ -28,6 +28,12 @@
           fill="#fff"
         />
       </symbol>
+      <symbol id="menu" viewBox="0 0 24 16">
+        <path d="M0 16h24v-2.667H0V16Zm0-6.667h24V6.667H0v2.666ZM0 0v2.667h24V0H0Z" fill="#fff"/>
+      </symbol>
+      <symbol id="search" viewBox="0 0 16 16">
+        <path d="M11.4351 10.0629H10.7124L10.4563 9.81589C11.3528 8.77301 11.8925 7.4191 11.8925 5.94625C11.8925 2.66209 9.23042 0 5.94625 0C2.66209 0 0 2.66209 0 5.94625C0 9.23042 2.66209 11.8925 5.94625 11.8925C7.4191 11.8925 8.77301 11.3528 9.81589 10.4563L10.0629 10.7124V11.4351L14.6369 16L16 14.6369L11.4351 10.0629ZM5.94625 10.0629C3.66838 10.0629 1.82962 8.22413 1.82962 5.94625C1.82962 3.66838 3.66838 1.82962 5.94625 1.82962C8.22413 1.82962 10.0629 3.66838 10.0629 5.94625C10.0629 8.22413 8.22413 10.0629 5.94625 10.0629Z" fill="#BFBFBF"/>
+      </symbol>
       <symbol id="googleplay" viewBox="0 0 135 40">
         <path
           d="M130 40H5c-2.75 0-5-2.25-5-5V5c0-2.75 2.25-5 5-5h125c2.75 0 5 2.25 5 5v30c0 2.75-2.25 5-5 5Z"
@@ -209,16 +215,21 @@
                     <use href="#account" />
                   </svg>
                 </a>
+                <a href="#">
+                  <svg class="header-icon__menu">
+                    <use href="#menu" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
           <div class="main">
-            <h1 class="main__heading bold-text">
+            <h1 class="main__heading bold-text col-sm-6">
               Discover stays <br />to live, work or just relax
             </h1>
             <form class="search" action="">
               <div class="search__labels">
-                <label class="col-lg-4 search__destination" for="destination"
+                <label class="col-lg-4 search__destination" for="city"
                   >Your destination or hotel name</label
                 >
                 <label class="col-lg-3 search__dates" for="check-in-check-out"
@@ -227,12 +238,19 @@
               </div>
               <div class="search__input row">
                 <input
-                  class="col-lg-4 col-sm-6 search__input-item search__input-item--destination"
-                  id="destination"
+                  class="col-lg-4 search__input-item search__input-item--destination"
+                  id="city"
                   type="text"
                   name="city"
                   value="New York"
                 />
+                <div class="col-sm-6 search__input-item--destination-responsive">
+                  <svg class="search-icon">
+                      <use href="#search" />
+                  </svg>
+                  <input class="col-sm-6 search__input-destination" id="destination" type="text" name="city" value="Your destination or hotel name"
+                    />
+                </div>
                 <input
                   class="col-lg-3 search__input-item search__input-item--dates"
                   id="check-in-check-out"
@@ -240,13 +258,37 @@
                   name="date"
                   value="Tue 15 Sept — Sat 19 Sept"
                 />
+                <div class="col-sm-6 search__input-item--dates-responsive">
+                  <div class="search__input-item search__input-item--responsive col-sm-3">
+                    <label class="search__input-label" for="check-in">Check-in date</label>
+                    <input class="search__input-field" id="check-in" type="text" name="date" value="Tue 15 Sept 2020">
+                  </div>
+                  <div class="search__input-item search__input-item--responsive col-sm-3">
+                    <label class="search__input-label" for="check-out">Check-out date</label>
+                    <input class="search__input-field" id="check-out" type="text" name="date" value="Sat 19 Sept 2020">
+                  </div>
+                </div>
                 <input
-                  class="col-lg-3 col-sm-6 search__input-item search__input-item--guests"
+                  class="col-lg-3 search__input-item search__input-item--guests"
                   type="text"
                   name="guests"
                   value="2 Adults — 0 Children — 1 Room"
                 />
-                <button class="col-lg-2 col-sm-6 search__button basic-text">
+                <div class="col-sm-6 search__input-item--guests-responsive">
+                  <div class="search__input-item search__input-item--responsive search__input-item--guest col-sm-2">
+                    <label class="search__input-label" for="adults">Adults</label>
+                    <input class="search__input-field" id="adults" type="text" name="adults" value="2">
+                  </div>
+                  <div class="search__input-item search__input-item--responsive search__input-item--guest col-sm-2">
+                    <label class="search__input-label" for="children">Children</label>
+                    <input class="search__input-field" id="children" type="text" name="children" value="0">
+                  </div>
+                  <div class="search__input-item search__input-item--responsive search__input-item--guest col-sm-2">
+                    <label class="search__input-label" for="rooms">Rooms</label>
+                    <input class="search__input-field" id="rooms" type="text" name="rooms" value="1">
+                  </div>
+                </div>
+                <button class="col-lg-2 col-sm-6 search__button basic-text bold-text">
                   Search
                 </button>
               </div>

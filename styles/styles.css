@@ -133,7 +133,7 @@ hr {
 }
 
 .top-section__header {
-  margin-bottom: 202px;
+  margin-bottom: 200px;
 }
 
 .header-info {
@@ -163,13 +163,13 @@ hr {
 
 .header-icon {
   align-items: center;
-  gap: 24px;
 }
 
 .header-icon__night-mode {
   display: flex;
   width: 30px;
   height: 30px;
+  margin-right: 24px;
 }
 
 .header-icon__account {
@@ -178,11 +178,14 @@ hr {
   height: 40px;
 }
 
+.header-icon__menu {
+  display: none;
+}
+
 .main__heading {
   font-size: 50px;
   color: #ffffff;
   line-height: 59px;
-  width: 542px;
   margin-bottom: 100px;
 }
 
@@ -220,10 +223,18 @@ hr {
   flex-grow: 1;
 }
 
+.search__input-item--destination-responsive {
+  display: none;
+}
+
 .search__input-item--dates {
   border: 3px solid #f5bd41;
   border-radius: 8px 0 0 8px;
   text-align: center;
+}
+
+.search__input-item--dates-responsive {
+  display: none;
 }
 
 .search__input-item--guests {
@@ -231,11 +242,14 @@ hr {
   text-align: center;
 }
 
+.search__input-item--guests-responsive {
+  display: none;
+}
+
 .search__button {
   background: #3077c6;
   border: none;
   border-radius: 8px;
-  font-weight: 500;
   color: #ffffff;
 }
 
@@ -354,6 +368,10 @@ hr {
     padding: 80px 16px;
   }
 
+  .top-section {
+    padding-top: 0;
+  }
+
   .offer__item {
     margin-bottom: 40px;
   }
@@ -412,8 +430,163 @@ hr {
     line-height: 33px;
   }
 
+  .top-section {
+    padding-top: 0;
+  }
+
+  .top-section__container {
+    padding-top: 12px;
+  }
+
+  .top-section__logo {
+    width: 122px;
+    height: 24px;
+  }
+
+  .top-section__header {
+    margin-bottom: 50px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header-icon__night-mode {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+  }
+
+  .header-icon__account {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+
+  .header-icon__menu {
+    display: flex;
+    width: 24px;
+    height: 16px;
+  }
+
+  .main__heading {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 30px;
+  }
+
+  .search {
+    margin-bottom: 30px;
+  }
+
+  .search__input {
+    height: 240px;
+    padding: 8px;
+    background: #f5bd41;
+    border-radius: 0;
+    gap: 8px;
+  }
+
+  .search__labels {
+    display: none;
+  }
+
+  .search__input-item--destination {
+    display: none;
+  }
+
+  .search__input-item--destination-responsive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: #ffffff;
+    border-radius: 4px;
+  }
+
+  .search-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .search__input-destination {
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0;
+  }
+
+  .search__input-item {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .search__input-item--dates {
+    display: none;
+  }
+
+  .search__input-item--dates-responsive {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .search__input-item--responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+  }
+
+  .search__input-label {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  .search__input-field {
+    padding: 0;
+    border: none;
+  }
+
+  .search__input-item--guests {
+    display: none;
+  }
+
+  .search__input-item--guests-responsive {
+    display: flex;
+    background: #ffffff;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .search__input-item--guest {
+    border-right: 1px solid #bfbfbf;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .search__input-item--guests-responsive .search__input-item--guest:last-child {
+    border: none;
+  }
+
+  .search__button {
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 15px 125px;
+  }
+
   .offer__container {
-    padding: 24px 73px 40px;
+    padding: 25px 75px 40px;
   }
 
   .offer__item {
