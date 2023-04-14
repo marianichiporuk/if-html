@@ -133,7 +133,7 @@ hr {
 }
 
 .top-section__header {
-  margin-bottom: 202px;
+  margin-bottom: 200px;
 }
 
 .header-info {
@@ -163,13 +163,13 @@ hr {
 
 .header-icon {
   align-items: center;
-  gap: 24px;
 }
 
 .header-icon__night-mode {
   display: flex;
   width: 30px;
   height: 30px;
+  margin-right: 24px;
 }
 
 .header-icon__account {
@@ -178,16 +178,15 @@ hr {
   height: 40px;
 }
 
+.header-icon__menu {
+  display: none;
+}
+
 .main__heading {
   font-size: 50px;
   color: #ffffff;
   line-height: 59px;
-  width: 542px;
   margin-bottom: 100px;
-}
-
-.search {
-  margin-bottom: 120px;
 }
 
 .search__labels {
@@ -200,10 +199,19 @@ hr {
   color: #ffffff;
 }
 
-.search__input {
-  height: 64px;
-  background: #ffffff;
+.search__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
   border-radius: 8px;
+  margin-bottom: 120px;
+}
+
+.search__item {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px 24px;
 }
 
 .search__input-item {
@@ -211,32 +219,53 @@ hr {
   font-size: 18px;
   line-height: 21px;
   color: #383838;
-  padding: 24px;
-}
-
-.search__input-item--destination {
+  padding: 0;
+  width: auto;
   border: none;
-  border-radius: 8px;
-  flex-grow: 1;
+  background: none;
+  overflow: hidden;
 }
 
-.search__input-item--dates {
+.search__item-icon {
+  display: none;
+}
+
+.search__input-label {
+  display: none;
+}
+
+.search__input-item-destination {
+  width: 100%;
+}
+
+.search__input-dates {
+  justify-content: center;
+  gap: 8px;
   border: 3px solid #f5bd41;
-  border-radius: 8px 0 0 8px;
-  text-align: center;
-}
-
-.search__input-item--guests {
-  border: none;
-  text-align: center;
-}
-
-.search__button {
-  background: #3077c6;
-  border: none;
   border-radius: 8px;
-  font-weight: 500;
+}
+
+.search__input-date {
+  overflow: hidden;
+}
+
+.search__input-guests {
+  justify-content: space-between;
+}
+
+.search__input-button {
+  padding: 0;
+  justify-content: center;
+  background: #3077c6;
+  border-radius: 8px;
+}
+
+.search__button-submit {
+  width: 100%;
+  text-align: center;
   color: #ffffff;
+  border: none;
+  background: none;
 }
 
 .main__apps {
@@ -354,6 +383,14 @@ hr {
     padding: 80px 16px;
   }
 
+  .top-section {
+    padding-top: 0;
+  }
+
+  .search__item {
+    padding: 10px;
+  }
+
   .offer__item {
     margin-bottom: 40px;
   }
@@ -412,8 +449,138 @@ hr {
     line-height: 33px;
   }
 
+  .top-section {
+    padding-top: 0;
+  }
+
+  .top-section__container {
+    padding-top: 12px;
+  }
+
+  .top-section__logo {
+    width: 122px;
+    height: 24px;
+  }
+
+  .top-section__header {
+    margin-bottom: 50px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header-icon__night-mode {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+  }
+
+  .header-icon__account {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+
+  .header-icon__menu {
+    display: flex;
+    width: 24px;
+    height: 16px;
+  }
+
+  .main__heading {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 30px;
+  }
+
+  .search__labels {
+    display: none;
+  }
+
+  .search__inputs {
+    padding: 8px;
+    background: #f5bd41;
+    gap: 8px;
+    border-radius: 0;
+    margin-bottom: 30px;
+  }
+
+  .search__item {
+    border-radius: 4px;
+    background: #ffffff;
+  }
+
+  .search__input-item {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .search__input-destination {
+    gap: 8px;
+    padding: 16px 12px;
+  }
+
+  .search__item-icon {
+    display: flex;
+    width: 16px;
+    height: 16px;
+  }
+
+  .search__input-dates {
+    background: #f5bd41;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    gap: 8px;
+  }
+
+  .search__input-date {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 6px 8px;
+  }
+
+  .search__input-label {
+    display: flex;
+    font-size: 12px;
+  }
+
+  .dash {
+    display: none;
+  }
+
+  .search__input-guests {
+    padding: 6px 8px;
+  }
+
+  .search__input-guest {
+    padding-left: 8px;
+    border-right: 1px solid #bfbfbf;
+  }
+
+  .search__input-guests .search__input-guest:last-child {
+    border-right: none;
+  }
+
+  .search__input-guests .search__input-guest:first-child {
+    padding-left: 0;
+  }
+
+  .search__input-button {
+    background: #3077c6;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 0;
+  }
+
+  .search__button-submit {
+    padding: 15px 125px;
+  }
+
   .offer__container {
-    padding: 24px 73px 40px;
+    padding: 25px 75px 40px;
   }
 
   .offer__item {
