@@ -71,17 +71,9 @@ body {
 .title {
   text-align: center;
   color: #383838;
-  margin-bottom: 20px;
+  margin-bottom: 105px;
   font-size: 40px;
   line-height: 47px;
-}
-
-hr {
-  margin: 0 auto 80px;
-  background-color: #f5bd41;
-  border: none;
-  width: 100px;
-  height: 4px;
 }
 
 .container {
@@ -154,11 +146,18 @@ hr {
 .menu__item {
   color: #ffffff;
   text-decoration: none;
+  position: relative;
 }
 
-.menu__item--active {
-  border-bottom: 4px solid #f5bd41;
-  padding-bottom: 12px;
+.menu__item:hover:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background: #f5bd41;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .header-icon {
@@ -170,16 +169,23 @@ hr {
   width: 30px;
   height: 30px;
   margin-right: 24px;
+  fill: #ffffff;
 }
 
 .header-icon__account {
   display: flex;
   width: 40px;
   height: 40px;
+  fill: #ffffff;
 }
 
 .header-icon__menu {
   display: none;
+  fill: #ffffff;
+}
+
+.header-icon__hover:hover {
+  fill: #f5bd41;
 }
 
 .main__heading {
@@ -284,6 +290,21 @@ hr {
   height: 40px;
 }
 
+.offer__title {
+  position: relative;
+}
+
+.offer__title:after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 4px;
+  background: #f5bd41;
+}
+
 .offer__item {
   display: flex;
   flex-direction: column;
@@ -298,6 +319,68 @@ hr {
 .offer__text {
   margin-top: 48px;
   text-align: center;
+}
+
+.homes {
+  background-color: #eaf0f9;
+}
+
+.homes__images {
+  gap: 16px;
+  flex-wrap: nowrap;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.homes__img-block {
+  max-width: 295px;
+  max-height: 295px;
+}
+
+.homes__img {
+  width: 100%;
+}
+
+.homes__slider {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #f3f3f4;
+  box-shadow: 5px 5px 5px #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.homes__arrow {
+  display: flex;
+  height: 20px;
+  width: 10px;
+}
+
+.homes__description {
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.homes__description-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 295px;
+  max-height: 295px;
+}
+
+.homes__name {
+  color: #3077c6;
+}
+
+.homes__location {
+  color: #bfbfbf;
 }
 
 .footer-inf__link {
@@ -398,6 +481,30 @@ hr {
   .offer__items {
     margin-bottom: -40px;
   }
+
+  .homes__images {
+    justify-content: space-around;
+  }
+
+  .homes__description {
+    justify-content: space-around;
+  }
+
+  .homes__description-item {
+    gap: 10px;
+  }
+
+  .homes__title {
+    margin-bottom: 80px;
+  }
+
+  .homes__name {
+    font-size: 18px;
+  }
+
+  .homes__location {
+    font-size: 18px;
+  }
 }
 
 /* For mobile: */
@@ -432,10 +539,6 @@ hr {
 
   .container {
     padding: 40px 16px;
-  }
-
-  hr {
-    display: none;
   }
 
   .basic-text {
@@ -583,6 +686,10 @@ hr {
     padding: 25px 75px 40px;
   }
 
+  .offer__title:after {
+    display: none;
+  }
+
   .offer__item {
     margin-bottom: 40px;
   }
@@ -594,6 +701,33 @@ hr {
   .offer__img {
     width: 70px;
     height: 70px;
+  }
+
+  .homes__images {
+    margin-bottom: 8px;
+  }
+
+  .homes__description-item {
+    gap: 4px;
+  }
+
+  .homes__kunerad {
+    display: none;
+  }
+
+  .homes__friendship {
+    display: none;
+  }
+
+  .homes__slider {
+    height: 25px;
+    width: 25px;
+    box-shadow: 1px 1px 5px #bfbfbf;
+  }
+
+  .homes__arrow {
+    height: 15px;
+    width: 5px;
   }
 
   .footer__logo--responsive {
