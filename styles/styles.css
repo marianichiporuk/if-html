@@ -120,6 +120,7 @@ body {
 }
 
 .top-section__logo {
+  fill: #3077c6;
   width: 205px;
   height: 40px;
 }
@@ -147,17 +148,23 @@ body {
   color: #ffffff;
   text-decoration: none;
   position: relative;
+  transition: all 1s ease;
 }
 
-.menu__item:hover:after {
+.menu__item:after {
   content: "";
   position: absolute;
-  width: 50px;
+  width: 0;
   height: 4px;
   background: #f5bd41;
   top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: width 300ms ease;
+}
+
+.menu__item:hover:after {
+  width: 50px;
 }
 
 .header-icon {
@@ -170,6 +177,7 @@ body {
   height: 30px;
   margin-right: 24px;
   fill: #ffffff;
+  transition: fill 300ms ease;
 }
 
 .header-icon__account {
@@ -177,6 +185,7 @@ body {
   width: 40px;
   height: 40px;
   fill: #ffffff;
+  transition: fill 300ms ease;
 }
 
 .header-icon__menu {
@@ -184,7 +193,7 @@ body {
   fill: #ffffff;
 }
 
-.header-icon__hover:hover {
+.header-icon__link:hover svg {
   fill: #f5bd41;
 }
 
@@ -325,41 +334,57 @@ body {
   background-color: #eaf0f9;
 }
 
-.homes__images {
+.places__images {
   gap: 16px;
   flex-wrap: nowrap;
   position: relative;
   margin-bottom: 25px;
 }
 
-.homes__img-block {
+.places__img-block {
   max-width: 295px;
   max-height: 295px;
+  overflow: hidden;
 }
 
-.homes__img {
+.places__img {
   width: 100%;
+  transition: .5s;
 }
 
-.homes__slider {
-  height: 40px;
-  width: 40px;
+.places__img:hover {
+  transform: scale(1.1);
+}
+
+.slider-block {
   border-radius: 50%;
-  background-color: #f3f3f4;
   box-shadow: 5px 5px 5px #bfbfbf;
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
 }
 
-.homes__arrow {
+.slider {
+  padding: 10px 15px;
+  border-radius: 50%;
+  background-color: #f3f3f4;
+  text-align: center;
+}
+
+.slider:active {
+  background-color: #bfbfbf;
+  transform: translateY(1px);
+}
+
+.arrow {
   display: flex;
   height: 20px;
   width: 10px;
+}
+
+.slider-right {
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .homes__description {
@@ -375,12 +400,183 @@ body {
   max-height: 295px;
 }
 
-.homes__name {
+.places__name {
   color: #3077c6;
+  text-decoration: none;
 }
 
 .homes__location {
   color: #bfbfbf;
+}
+
+.destinations {
+  background-color: #ffffff;
+}
+
+.destinations__container {
+  padding-bottom: 210px;
+}
+
+.destinations__menu {
+  display: flex;
+  background-color: #f3f3f4;
+  border-radius: 8px;
+  margin-bottom: 65px;
+}
+
+.destinations__menu-item {
+  display: flex;
+}
+
+.destinations__menu-name {
+  text-decoration: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #f3f3f4;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 300ms ease;
+}
+
+.destinations__menu-item:hover a {
+  background-color: #3077c6;
+  color: #ffffff;
+}
+
+.destinations__img-block {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(56, 56, 56, 0);
+  transition: background-color 0.5s ease;
+}
+
+.destinations__img-block:hover .overlay {
+  background-color: rgba(56, 56, 56, 0.4);
+}
+
+.destinations__booking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.destinations__booking-submit {
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #3077c6;
+  border-radius: 8px;
+  color: #3077c6;
+  font-size: 18px;
+  padding: 15px 25px;
+}
+
+.destinations__img-block:hover .destinations__booking {
+  opacity: 1;
+}
+
+.slider-down {
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow-down {
+  transform: rotate(90deg);
+}
+
+.destinations__description {
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.destinations__description-item {
+  max-width: 295px;
+}
+
+.sign-up__container {
+  background-color: #eaf0f9;
+  padding: 25px;
+}
+
+.sign-up__block {
+  position: relative;
+  display: flex;
+  gap: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.sign-up__avatar {
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 20px;
+  max-width: 85px;
+  max-height: 85px;
+}
+
+.sign-up__avatar-pic {
+  max-width: 50px;
+  max-height: 45px;
+  text-align: center;
+}
+
+.sign-up__avatar-pic--mob {
+  display: none;
+}
+
+.sign-up__text {
+  margin-bottom: 20px;
+}
+
+.sign-up__button {
+  display: flex;
+}
+
+.sign-up__link {
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  color: #3077c6;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 12px 32px;
+  border: 1px solid #3077c6;
+  transition: background-color 300ms ease;
+}
+
+.sign-up__link:hover {
+  color: #ffffff;
+  background-color: #3077c6;
+  border: 1px solid #ffffff;
+}
+
+.sign-up__link--mob {
+  display: none;
+}
+
+.sign-up__cancel {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign-up__cancel-icon {
+  max-width: 25px;
+  max-height: 25px;
+  text-align: center;
 }
 
 .footer-inf__link {
@@ -482,11 +678,15 @@ body {
     margin-bottom: -40px;
   }
 
-  .homes__images {
+  .places__images {
     justify-content: space-around;
   }
 
   .homes__description {
+    justify-content: space-around;
+  }
+
+  .destinations__description {
     justify-content: space-around;
   }
 
@@ -498,12 +698,24 @@ body {
     margin-bottom: 80px;
   }
 
-  .homes__name {
+  .destinations__title {
+    margin-bottom: 80px;
+  }
+
+  .places__images {
+    margin-bottom: 20px;
+  }
+
+  .places__name {
     font-size: 18px;
   }
 
   .homes__location {
     font-size: 18px;
+  }
+
+  .sign-up__container {
+    padding: 40px 16px;
   }
 }
 
@@ -703,12 +915,20 @@ body {
     height: 70px;
   }
 
-  .homes__images {
+  .places__images {
     margin-bottom: 8px;
+  }
+
+  .places__name {
+    font-size: 12px;
   }
 
   .homes__description-item {
     gap: 4px;
+  }
+
+  .homes__location {
+    font-size: 12px;
   }
 
   .homes__kunerad {
@@ -719,18 +939,133 @@ body {
     display: none;
   }
 
-  .homes__slider {
-    height: 25px;
-    width: 25px;
+  .slider-block {
     box-shadow: 1px 1px 5px #bfbfbf;
   }
 
-  .homes__arrow {
+  .slider {
+    padding: 8px 12px;
+  }
+
+  .arrow {
     height: 15px;
     width: 5px;
   }
 
+  .destinations__menu {
+    justify-content: space-between;
+    gap: 16px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 25px;
+  }
+
+  .destinations__menu-name {
+    font-size: 19px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #f3f3f4;
+  }
+
+  .destinations__norway {
+    display: none;
+  }
+
+  .destinations__iceland {
+    display: none;
+  }
+
+  .slider-down {
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  .arrow-down {
+    transform: rotate(0deg);
+  }
+
+  .sign-up__container {
+    background-color: #ffffff;
+    padding: 25px 16px;
+  }
+
+  .sign-up__block {
+    position: static;
+    gap: 16px;
+    align-items: center;
+    padding: 0;
+  }
+
+  .sign-up__cancel {
+    position: static;
+    top: 0;
+    right: 0;
+  }
+
+  .sign-up__cancel-icon {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
+  .sign-up__avatar {
+    background-color: #3077c6;
+    border-radius: 4px;
+    padding: 0;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sign-up__avatar-pic {
+    display: none;
+  }
+
+  .sign-up__avatar-pic--mob {
+    display: flex;
+    fill: #ffffff;
+    width: 50px;
+    height: 10px;
+  }
+
+  .sign-up__item {
+    display: flex;
+    flex-grow: 1;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sign-up__text {
+    margin-bottom: 0;
+  }
+
+  .sign-up__text--mob {
+    font-size: 12px;
+  }
+
+  .sign-up__button {
+    display: flex;
+    justify-self: end;
+  }
+
+  .sign-up__link {
+    display: none;
+  }
+
+  .sign-up__link--mob {
+    display: flex;
+    text-decoration: none;
+    color: #3077c6;
+    font-size: 14px;
+  }
+
   .footer__logo--responsive {
+    fill: #ffffff;
     display: block;
     height: 19px;
     margin: 0 auto 40px;
