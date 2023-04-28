@@ -2,6 +2,14 @@
 
 :root {
   --col-width: calc(100% / 12);
+  --primary: #3077c6;
+  --main-text: #383838;
+  --background-light: #ffffff;
+  --background-main: #eaf0f9;
+  --accent: #f5bd41;
+  --secondary-text: #bfbfbf;
+  --background-dark: #10367c;
+  --button-background: #f3f3f4;
 }
 
 * {
@@ -69,11 +77,11 @@ body {
 }
 
 .title {
-  text-align: center;
-  color: #383838;
   margin-bottom: 105px;
   font-size: 40px;
   line-height: 47px;
+  text-align: center;
+  color: var(--main-text);
 }
 
 .container {
@@ -89,7 +97,7 @@ body {
 }
 
 .basic-text {
-  color: #383838;
+  color: var(--main-text);
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
@@ -113,16 +121,16 @@ body {
 }
 
 .top-section__container {
-  padding-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 0;
 }
 
 .top-section__logo {
-  fill: #3077c6;
   width: 205px;
   height: 40px;
+  fill: var(--primary);
 }
 
 .top-section__header {
@@ -136,31 +144,31 @@ body {
 }
 
 .menu {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
   gap: 24px;
+  list-style-type: none;
 }
 
 .menu__item {
-  color: #ffffff;
-  text-decoration: none;
   position: relative;
+  color: var(--background-light);
+  text-decoration: none;
   transition: all 1s ease;
 }
 
 .menu__item:after {
-  content: "";
   position: absolute;
+  content: "";
   width: 0;
   height: 4px;
-  background: #f5bd41;
   top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: width 300ms ease;
+  background: var(--accent);
 }
 
 .menu__item:hover:after {
@@ -176,7 +184,7 @@ body {
   width: 30px;
   height: 30px;
   margin-right: 24px;
-  fill: #ffffff;
+  fill: var(--background-light);
   transition: fill 300ms ease;
 }
 
@@ -184,24 +192,24 @@ body {
   display: flex;
   width: 40px;
   height: 40px;
-  fill: #ffffff;
+  fill: var(--background-light);
   transition: fill 300ms ease;
 }
 
 .header-icon__menu {
   display: none;
-  fill: #ffffff;
+  fill: var(--background-light);
 }
 
 .header-icon__link:hover svg {
-  fill: #f5bd41;
+  fill: var(--accent);
 }
 
 .main__heading {
-  font-size: 50px;
-  color: #ffffff;
-  line-height: 59px;
   margin-bottom: 100px;
+  font-size: 50px;
+  color: var(--background-light);
+  line-height: 59px;
 }
 
 .search__labels {
@@ -211,31 +219,31 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #ffffff;
+  color: var(--background-light);
 }
 
 .search__inputs {
   display: flex;
   flex-wrap: wrap;
-  background-color: #ffffff;
-  border-radius: 8px;
   margin-bottom: 120px;
+  background-color: var(--background-light);
+  border-radius: 8px;
 }
 
 .search__item {
   display: flex;
   align-items: center;
-  border-radius: 8px;
   padding: 20px 24px;
+  border-radius: 8px;
 }
 
 .search__input-item {
+  padding: 0;
+  width: auto;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #383838;
-  padding: 0;
-  width: auto;
+  color: var(--main-text);
   border: none;
   background: none;
   overflow: hidden;
@@ -256,7 +264,7 @@ body {
 .search__input-dates {
   justify-content: center;
   gap: 8px;
-  border: 3px solid #f5bd41;
+  border: 3px solid var(--accent);
   border-radius: 8px;
 }
 
@@ -269,24 +277,24 @@ body {
 }
 
 .search__input-button {
-  padding: 0;
   justify-content: center;
-  background: #3077c6;
+  padding: 0;
+  background: var(--primary);
   border-radius: 8px;
 }
 
 .search__button-submit {
   width: 100%;
   text-align: center;
-  color: #ffffff;
+  color: var(--background-light);
   border: none;
   background: none;
 }
 
 .main__apps {
   display: flex;
-  gap: 17px;
   justify-content: center;
+  gap: 17px;
 }
 
 .main__googleplay-logo {
@@ -304,14 +312,14 @@ body {
 }
 
 .offer__title:after {
-  content: "";
   position: absolute;
+  content: "";
   top: 70px;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 100px;
   height: 4px;
-  background: #f5bd41;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
 }
 
 .offer__item {
@@ -331,13 +339,13 @@ body {
 }
 
 .homes {
-  background-color: #eaf0f9;
+  background-color: var(--background-main);
 }
 
 .places__images {
-  gap: 16px;
-  flex-wrap: nowrap;
   position: relative;
+  flex-wrap: nowrap;
+  gap: 16px;
   margin-bottom: 25px;
 }
 
@@ -357,21 +365,21 @@ body {
 }
 
 .slider-block {
-  border-radius: 50%;
-  box-shadow: 5px 5px 5px #bfbfbf;
   display: flex;
   position: absolute;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px var(--secondary-text);
 }
 
 .slider {
   padding: 10px 15px;
   border-radius: 50%;
-  background-color: #f3f3f4;
+  background-color: var(--button-background);
   text-align: center;
 }
 
 .slider:active {
-  background-color: #bfbfbf;
+  background-color: var(--secondary-text);
   transform: translateY(1px);
 }
 
@@ -388,8 +396,8 @@ body {
 }
 
 .homes__description {
-  gap: 16px;
   flex-wrap: nowrap;
+  gap: 16px;
 }
 
 .homes__description-item {
@@ -401,16 +409,16 @@ body {
 }
 
 .places__name {
-  color: #3077c6;
+  color: var(--primary);
   text-decoration: none;
 }
 
 .homes__location {
-  color: #bfbfbf;
+  color: var(--secondary-text);
 }
 
 .destinations {
-  background-color: #ffffff;
+  background-color: var(--background-light);
 }
 
 .destinations__container {
@@ -419,9 +427,9 @@ body {
 
 .destinations__menu {
   display: flex;
-  background-color: #f3f3f4;
-  border-radius: 8px;
   margin-bottom: 65px;
+  background-color: var(--button-background);
+  border-radius: 8px;
 }
 
 .destinations__menu-item {
@@ -429,19 +437,19 @@ body {
 }
 
 .destinations__menu-name {
-  text-decoration: none;
+  width: 100%;
   padding-top: 16px;
   padding-bottom: 16px;
-  background-color: #f3f3f4;
+  background-color: var(--button-background);
   border-radius: 8px;
-  width: 100%;
+  text-decoration: none;
   text-align: center;
   transition: background-color 300ms ease;
 }
 
 .destinations__menu-item:hover a {
-  background-color: #3077c6;
-  color: #ffffff;
+  background-color: var(--primary);
+  color: var(--background-light);
 }
 
 .destinations__img-block {
@@ -473,13 +481,13 @@ body {
 }
 
 .destinations__booking-submit {
-  text-decoration: none;
-  background-color: #ffffff;
-  border: 1px solid #3077c6;
-  border-radius: 8px;
-  color: #3077c6;
-  font-size: 18px;
   padding: 15px 25px;
+  text-decoration: none;
+  background-color: var(--background-light);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  color: var(--primary);
+  font-size: 18px;
 }
 
 .destinations__img-block:hover .destinations__booking {
@@ -497,8 +505,8 @@ body {
 }
 
 .destinations__description {
-  gap: 16px;
   flex-wrap: nowrap;
+  gap: 16px;
 }
 
 .destinations__description-item {
@@ -506,8 +514,8 @@ body {
 }
 
 .sign-up__container {
-  background-color: #eaf0f9;
   padding: 25px;
+  background-color: var(--background-main);
 }
 
 .sign-up__block {
@@ -519,11 +527,11 @@ body {
 }
 
 .sign-up__avatar {
-  background-color: #ffffff;
-  border-radius: 50%;
   padding: 20px;
   max-width: 85px;
   max-height: 85px;
+  background-color: var(--background-light);
+  border-radius: 50%;
 }
 
 .sign-up__avatar-pic {
@@ -545,21 +553,21 @@ body {
 }
 
 .sign-up__link {
+  padding: 12px 32px;
   text-decoration: none;
   text-align: center;
   font-size: 18px;
-  color: #3077c6;
-  background-color: #ffffff;
+  color: var(--primary);
+  background-color: var(--background-light);
   border-radius: 8px;
-  padding: 12px 32px;
-  border: 1px solid #3077c6;
+  border: 1px solid var(--primary);
   transition: background-color 300ms ease;
 }
 
 .sign-up__link:hover {
-  color: #ffffff;
-  background-color: #3077c6;
-  border: 1px solid #ffffff;
+  color: var(--background-light);
+  background-color: var(--primary);
+  border: 1px solid var(--background-light);
 }
 
 .sign-up__link--mob {
@@ -581,18 +589,18 @@ body {
 
 .footer-inf__link {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--background-light);
 }
 
 .footer-text {
-  color: #ffffff;
+  margin-bottom: 24px;
+  color: var(--background-light);
   font-size: 20px;
   line-height: 23px;
-  margin-bottom: 24px;
 }
 
 .footer {
-  background-color: #10367c;
+  background-color: var(--background-dark);
 }
 
 .footer__logo--responsive {
@@ -605,7 +613,7 @@ body {
 
 .footer-inf__copyright {
   font-size: 14px;
-  color: #ffffff;
+  color: var(--background-light);
 }
 
 /* For tablet: */
@@ -804,9 +812,9 @@ body {
   }
 
   .main__heading {
+    margin-bottom: 30px;
     font-size: 30px;
     line-height: 35px;
-    margin-bottom: 30px;
   }
 
   .search__labels {
@@ -815,15 +823,15 @@ body {
 
   .search__inputs {
     padding: 8px;
-    background: #f5bd41;
-    gap: 8px;
-    border-radius: 0;
     margin-bottom: 30px;
+    gap: 8px;
+    background: var(--accent);
+    border-radius: 0;
   }
 
   .search__item {
     border-radius: 4px;
-    background: #ffffff;
+    background: var(--background-light);
   }
 
   .search__input-item {
@@ -844,17 +852,17 @@ body {
   }
 
   .search__input-dates {
-    background: #f5bd41;
     display: flex;
     justify-content: space-between;
     padding: 0;
     gap: 8px;
+    background: var(--accent);
   }
 
   .search__input-date {
-    background-color: #ffffff;
-    border-radius: 4px;
     padding: 6px 8px;
+    background-color: var(--background-light);
+    border-radius: 4px;
   }
 
   .search__input-label {
@@ -872,7 +880,7 @@ body {
 
   .search__input-guest {
     padding-left: 8px;
-    border-right: 1px solid #bfbfbf;
+    border-right: 1px solid var(--secondary-text);
   }
 
   .search__input-guests .search__input-guest:last-child {
@@ -884,10 +892,10 @@ body {
   }
 
   .search__input-button {
-    background: #3077c6;
+    padding: 0;
+    background: var(--primary);
     font-size: 20px;
     border-radius: 4px;
-    padding: 0;
   }
 
   .search__button-submit {
@@ -940,7 +948,7 @@ body {
   }
 
   .slider-block {
-    box-shadow: 1px 1px 5px #bfbfbf;
+    box-shadow: 1px 1px 5px var(--secondary-text);
   }
 
   .slider {
@@ -955,18 +963,18 @@ body {
   .destinations__menu {
     justify-content: space-between;
     gap: 16px;
-    background-color: #ffffff;
-    border-radius: 4px;
     margin-bottom: 25px;
+    background-color: var(--background-light);
+    border-radius: 4px;
   }
 
   .destinations__menu-name {
-    font-size: 19px;
     padding-top: 5px;
     padding-bottom: 5px;
+    font-size: 19px;
     border-radius: 4px;
-    background-color: #ffffff;
-    border: 1px solid #f3f3f4;
+    background-color: var(--background-light);
+    border: 1px solid var(--button-background);
   }
 
   .destinations__norway {
@@ -988,14 +996,14 @@ body {
   }
 
   .sign-up__container {
-    background-color: #ffffff;
     padding: 25px 16px;
+    background-color: var(--background-light);
   }
 
   .sign-up__block {
     position: static;
-    gap: 16px;
     align-items: center;
+    gap: 16px;
     padding: 0;
   }
 
@@ -1011,14 +1019,14 @@ body {
   }
 
   .sign-up__avatar {
-    background-color: #3077c6;
-    border-radius: 4px;
-    padding: 0;
-    width: 58px;
-    height: 58px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    width: 58px;
+    height: 58px;
+    background-color: var(--primary);
+    border-radius: 4px;
   }
 
   .sign-up__avatar-pic {
@@ -1027,17 +1035,17 @@ body {
 
   .sign-up__avatar-pic--mob {
     display: flex;
-    fill: #ffffff;
     width: 50px;
     height: 10px;
+    fill: var(--background-light);
   }
 
   .sign-up__item {
     display: flex;
-    flex-grow: 1;
-    gap: 16px;
     align-items: center;
     justify-content: space-between;
+    flex-grow: 1;
+    gap: 16px;
   }
 
   .sign-up__text {
@@ -1060,15 +1068,15 @@ body {
   .sign-up__link--mob {
     display: flex;
     text-decoration: none;
-    color: #3077c6;
+    color: var(--primary);
     font-size: 14px;
   }
 
   .footer__logo--responsive {
-    fill: #ffffff;
     display: block;
     height: 19px;
     margin: 0 auto 40px;
+    fill: var(--background-light);
   }
 
   .footer-inf.row {
@@ -1093,15 +1101,15 @@ body {
   }
 
   .footer-inf__link {
-    color: #ffffff;
+    color: var(--background-light);
     text-decoration-line: underline;
   }
 
   .footer-text {
+    margin-bottom: 0;
     font-size: 15px;
     line-height: 18px;
     text-align: center;
-    margin-bottom: 0;
   }
 
   .footer-item {
