@@ -2,6 +2,14 @@
 
 :root {
   --col-width: calc(100% / 12);
+  --primary: #3077c6;
+  --main-text: #383838;
+  --background-light: #ffffff;
+  --background-main: #eaf0f9;
+  --accent: #f5bd41;
+  --secondary-text: #bfbfbf;
+  --background-dark: #10367c;
+  --button-background: #f3f3f4;
 }
 
 * {
@@ -69,11 +77,11 @@ body {
 }
 
 .title {
-  text-align: center;
-  color: #383838;
   margin-bottom: 105px;
   font-size: 40px;
   line-height: 47px;
+  text-align: center;
+  color: var(--main-text);
 }
 
 .container {
@@ -89,7 +97,7 @@ body {
 }
 
 .basic-text {
-  color: #383838;
+  color: var(--main-text);
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
@@ -113,15 +121,16 @@ body {
 }
 
 .top-section__container {
-  padding-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 0;
 }
 
 .top-section__logo {
   width: 205px;
   height: 40px;
+  fill: var(--primary);
 }
 
 .top-section__header {
@@ -135,29 +144,35 @@ body {
 }
 
 .menu {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
   gap: 24px;
+  list-style-type: none;
 }
 
 .menu__item {
-  color: #ffffff;
-  text-decoration: none;
   position: relative;
+  color: var(--background-light);
+  text-decoration: none;
+  transition: all 1s ease;
 }
 
-.menu__item:hover:after {
-  content: "";
+.menu__item:after {
   position: absolute;
-  width: 50px;
+  content: "";
+  width: 0;
   height: 4px;
-  background: #f5bd41;
   top: 40px;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: width 300ms ease;
+  background: var(--accent);
+}
+
+.menu__item:hover:after {
+  width: 50px;
 }
 
 .header-icon {
@@ -169,30 +184,32 @@ body {
   width: 30px;
   height: 30px;
   margin-right: 24px;
-  fill: #ffffff;
+  fill: var(--background-light);
+  transition: fill 300ms ease;
 }
 
 .header-icon__account {
   display: flex;
   width: 40px;
   height: 40px;
-  fill: #ffffff;
+  fill: var(--background-light);
+  transition: fill 300ms ease;
 }
 
 .header-icon__menu {
   display: none;
-  fill: #ffffff;
+  fill: var(--background-light);
 }
 
-.header-icon__hover:hover {
-  fill: #f5bd41;
+.header-icon__link:hover svg {
+  fill: var(--accent);
 }
 
 .main__heading {
-  font-size: 50px;
-  color: #ffffff;
-  line-height: 59px;
   margin-bottom: 100px;
+  font-size: 50px;
+  color: var(--background-light);
+  line-height: 59px;
 }
 
 .search__labels {
@@ -202,31 +219,31 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #ffffff;
+  color: var(--background-light);
 }
 
 .search__inputs {
   display: flex;
   flex-wrap: wrap;
-  background-color: #ffffff;
-  border-radius: 8px;
   margin-bottom: 120px;
+  background-color: var(--background-light);
+  border-radius: 8px;
 }
 
 .search__item {
   display: flex;
   align-items: center;
-  border-radius: 8px;
   padding: 20px 24px;
+  border-radius: 8px;
 }
 
 .search__input-item {
+  padding: 0;
+  width: auto;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  color: #383838;
-  padding: 0;
-  width: auto;
+  color: var(--main-text);
   border: none;
   background: none;
   overflow: hidden;
@@ -247,7 +264,7 @@ body {
 .search__input-dates {
   justify-content: center;
   gap: 8px;
-  border: 3px solid #f5bd41;
+  border: 3px solid var(--accent);
   border-radius: 8px;
 }
 
@@ -260,24 +277,24 @@ body {
 }
 
 .search__input-button {
-  padding: 0;
   justify-content: center;
-  background: #3077c6;
+  padding: 0;
+  background: var(--primary);
   border-radius: 8px;
 }
 
 .search__button-submit {
   width: 100%;
   text-align: center;
-  color: #ffffff;
+  color: var(--background-light);
   border: none;
   background: none;
 }
 
 .main__apps {
   display: flex;
-  gap: 17px;
   justify-content: center;
+  gap: 17px;
 }
 
 .main__googleplay-logo {
@@ -295,14 +312,14 @@ body {
 }
 
 .offer__title:after {
-  content: "";
   position: absolute;
+  content: "";
   top: 70px;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 100px;
   height: 4px;
-  background: #f5bd41;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
 }
 
 .offer__item {
@@ -322,49 +339,65 @@ body {
 }
 
 .homes {
-  background-color: #eaf0f9;
+  background-color: var(--background-main);
 }
 
-.homes__images {
-  gap: 16px;
-  flex-wrap: nowrap;
+.places__images {
   position: relative;
+  flex-wrap: nowrap;
+  gap: 16px;
   margin-bottom: 25px;
 }
 
-.homes__img-block {
+.places__img-block {
   max-width: 295px;
   max-height: 295px;
+  overflow: hidden;
 }
 
-.homes__img {
+.places__img {
   width: 100%;
+  transition: .5s;
 }
 
-.homes__slider {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: #f3f3f4;
-  box-shadow: 5px 5px 5px #bfbfbf;
+.places__img:hover {
+  transform: scale(1.1);
+}
+
+.slider-block {
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px var(--secondary-text);
 }
 
-.homes__arrow {
+.slider {
+  padding: 10px 15px;
+  border-radius: 50%;
+  background-color: var(--button-background);
+  text-align: center;
+}
+
+.slider:active {
+  background-color: var(--secondary-text);
+  transform: translateY(1px);
+}
+
+.arrow {
   display: flex;
   height: 20px;
   width: 10px;
 }
 
+.slider-right {
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
 .homes__description {
-  gap: 16px;
   flex-wrap: nowrap;
+  gap: 16px;
 }
 
 .homes__description-item {
@@ -375,28 +408,199 @@ body {
   max-height: 295px;
 }
 
-.homes__name {
-  color: #3077c6;
+.places__name {
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .homes__location {
-  color: #bfbfbf;
+  color: var(--secondary-text);
+}
+
+.destinations {
+  background-color: var(--background-light);
+}
+
+.destinations__container {
+  padding-bottom: 210px;
+}
+
+.destinations__menu {
+  display: flex;
+  margin-bottom: 65px;
+  background-color: var(--button-background);
+  border-radius: 8px;
+}
+
+.destinations__menu-item {
+  display: flex;
+}
+
+.destinations__menu-name {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--button-background);
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 300ms ease;
+}
+
+.destinations__menu-item:hover a {
+  background-color: var(--primary);
+  color: var(--background-light);
+}
+
+.destinations__img-block {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(56, 56, 56, 0);
+  transition: background-color 0.5s ease;
+}
+
+.destinations__img-block:hover .overlay {
+  background-color: rgba(56, 56, 56, 0.4);
+}
+
+.destinations__booking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.destinations__booking-submit {
+  padding: 15px 25px;
+  text-decoration: none;
+  background-color: var(--background-light);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.destinations__img-block:hover .destinations__booking {
+  opacity: 1;
+}
+
+.slider-down {
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow-down {
+  transform: rotate(90deg);
+}
+
+.destinations__description {
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+.destinations__description-item {
+  max-width: 295px;
+}
+
+.sign-up__container {
+  padding: 25px;
+  background-color: var(--background-main);
+}
+
+.sign-up__block {
+  position: relative;
+  display: flex;
+  gap: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.sign-up__avatar {
+  padding: 20px;
+  max-width: 85px;
+  max-height: 85px;
+  background-color: var(--background-light);
+  border-radius: 50%;
+}
+
+.sign-up__avatar-pic {
+  max-width: 50px;
+  max-height: 45px;
+  text-align: center;
+}
+
+.sign-up__avatar-pic--mob {
+  display: none;
+}
+
+.sign-up__text {
+  margin-bottom: 20px;
+}
+
+.sign-up__button {
+  display: flex;
+}
+
+.sign-up__link {
+  padding: 12px 32px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  color: var(--primary);
+  background-color: var(--background-light);
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  transition: background-color 300ms ease;
+}
+
+.sign-up__link:hover {
+  color: var(--background-light);
+  background-color: var(--primary);
+  border: 1px solid var(--background-light);
+}
+
+.sign-up__link--mob {
+  display: none;
+}
+
+.sign-up__cancel {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign-up__cancel-icon {
+  max-width: 25px;
+  max-height: 25px;
+  text-align: center;
 }
 
 .footer-inf__link {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--background-light);
 }
 
 .footer-text {
-  color: #ffffff;
+  margin-bottom: 24px;
+  color: var(--background-light);
   font-size: 20px;
   line-height: 23px;
-  margin-bottom: 24px;
 }
 
 .footer {
-  background-color: #10367c;
+  background-color: var(--background-dark);
 }
 
 .footer__logo--responsive {
@@ -409,7 +613,7 @@ body {
 
 .footer-inf__copyright {
   font-size: 14px;
-  color: #ffffff;
+  color: var(--background-light);
 }
 
 /* For tablet: */
@@ -482,11 +686,15 @@ body {
     margin-bottom: -40px;
   }
 
-  .homes__images {
+  .places__images {
     justify-content: space-around;
   }
 
   .homes__description {
+    justify-content: space-around;
+  }
+
+  .destinations__description {
     justify-content: space-around;
   }
 
@@ -498,12 +706,24 @@ body {
     margin-bottom: 80px;
   }
 
-  .homes__name {
+  .destinations__title {
+    margin-bottom: 80px;
+  }
+
+  .places__images {
+    margin-bottom: 20px;
+  }
+
+  .places__name {
     font-size: 18px;
   }
 
   .homes__location {
     font-size: 18px;
+  }
+
+  .sign-up__container {
+    padding: 40px 16px;
   }
 }
 
@@ -592,9 +812,9 @@ body {
   }
 
   .main__heading {
+    margin-bottom: 30px;
     font-size: 30px;
     line-height: 35px;
-    margin-bottom: 30px;
   }
 
   .search__labels {
@@ -603,15 +823,15 @@ body {
 
   .search__inputs {
     padding: 8px;
-    background: #f5bd41;
-    gap: 8px;
-    border-radius: 0;
     margin-bottom: 30px;
+    gap: 8px;
+    background: var(--accent);
+    border-radius: 0;
   }
 
   .search__item {
     border-radius: 4px;
-    background: #ffffff;
+    background: var(--background-light);
   }
 
   .search__input-item {
@@ -632,17 +852,17 @@ body {
   }
 
   .search__input-dates {
-    background: #f5bd41;
     display: flex;
     justify-content: space-between;
     padding: 0;
     gap: 8px;
+    background: var(--accent);
   }
 
   .search__input-date {
-    background-color: #ffffff;
-    border-radius: 4px;
     padding: 6px 8px;
+    background-color: var(--background-light);
+    border-radius: 4px;
   }
 
   .search__input-label {
@@ -660,7 +880,7 @@ body {
 
   .search__input-guest {
     padding-left: 8px;
-    border-right: 1px solid #bfbfbf;
+    border-right: 1px solid var(--secondary-text);
   }
 
   .search__input-guests .search__input-guest:last-child {
@@ -672,10 +892,10 @@ body {
   }
 
   .search__input-button {
-    background: #3077c6;
+    padding: 0;
+    background: var(--primary);
     font-size: 20px;
     border-radius: 4px;
-    padding: 0;
   }
 
   .search__button-submit {
@@ -703,12 +923,20 @@ body {
     height: 70px;
   }
 
-  .homes__images {
+  .places__images {
     margin-bottom: 8px;
+  }
+
+  .places__name {
+    font-size: 12px;
   }
 
   .homes__description-item {
     gap: 4px;
+  }
+
+  .homes__location {
+    font-size: 12px;
   }
 
   .homes__kunerad {
@@ -719,21 +947,136 @@ body {
     display: none;
   }
 
-  .homes__slider {
-    height: 25px;
-    width: 25px;
-    box-shadow: 1px 1px 5px #bfbfbf;
+  .slider-block {
+    box-shadow: 1px 1px 5px var(--secondary-text);
   }
 
-  .homes__arrow {
+  .slider {
+    padding: 8px 12px;
+  }
+
+  .arrow {
     height: 15px;
     width: 5px;
+  }
+
+  .destinations__menu {
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+    background-color: var(--background-light);
+    border-radius: 4px;
+  }
+
+  .destinations__menu-name {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 19px;
+    border-radius: 4px;
+    background-color: var(--background-light);
+    border: 1px solid var(--button-background);
+  }
+
+  .destinations__norway {
+    display: none;
+  }
+
+  .destinations__iceland {
+    display: none;
+  }
+
+  .slider-down {
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  .arrow-down {
+    transform: rotate(0deg);
+  }
+
+  .sign-up__container {
+    padding: 25px 16px;
+    background-color: var(--background-light);
+  }
+
+  .sign-up__block {
+    position: static;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .sign-up__cancel {
+    position: static;
+    top: 0;
+    right: 0;
+  }
+
+  .sign-up__cancel-icon {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
+  .sign-up__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 58px;
+    height: 58px;
+    background-color: var(--primary);
+    border-radius: 4px;
+  }
+
+  .sign-up__avatar-pic {
+    display: none;
+  }
+
+  .sign-up__avatar-pic--mob {
+    display: flex;
+    width: 50px;
+    height: 10px;
+    fill: var(--background-light);
+  }
+
+  .sign-up__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 16px;
+  }
+
+  .sign-up__text {
+    margin-bottom: 0;
+  }
+
+  .sign-up__text--mob {
+    font-size: 12px;
+  }
+
+  .sign-up__button {
+    display: flex;
+    justify-self: end;
+  }
+
+  .sign-up__link {
+    display: none;
+  }
+
+  .sign-up__link--mob {
+    display: flex;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 14px;
   }
 
   .footer__logo--responsive {
     display: block;
     height: 19px;
     margin: 0 auto 40px;
+    fill: var(--background-light);
   }
 
   .footer-inf.row {
@@ -758,15 +1101,15 @@ body {
   }
 
   .footer-inf__link {
-    color: #ffffff;
+    color: var(--background-light);
     text-decoration-line: underline;
   }
 
   .footer-text {
+    margin-bottom: 0;
     font-size: 15px;
     line-height: 18px;
     text-align: center;
-    margin-bottom: 0;
   }
 
   .footer-item {
