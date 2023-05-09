@@ -24,6 +24,27 @@ body {
   font-size: 24px;
 }
 
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+
 .col-lg-1 {
   width: var(--col-width);
 }
@@ -156,7 +177,6 @@ body {
 .menu__item {
   position: relative;
   color: var(--background-light);
-  text-decoration: none;
   transition: all 1s ease;
 }
 
@@ -234,12 +254,16 @@ body {
 .search__item {
   display: flex;
   align-items: center;
-  padding: 20px 24px;
+  border-radius: 8px;
+}
+
+.search__item:focus-within {
+  border: 3px solid var(--accent);
   border-radius: 8px;
 }
 
 .search__input-item {
-  padding: 0;
+  padding: 20px;
   width: auto;
   font-weight: 400;
   font-size: 18px;
@@ -250,6 +274,14 @@ body {
   overflow: hidden;
 }
 
+.search__check-in {
+  padding-right: 0;
+}
+
+.search__check-out {
+  padding-left: 0;
+}
+
 .search__item-icon {
   display: none;
 }
@@ -258,15 +290,13 @@ body {
   display: none;
 }
 
-.search__input-item-destination {
+.search__destination {
   width: 100%;
 }
 
 .search__input-dates {
   justify-content: center;
   gap: 8px;
-  border: 3px solid var(--accent);
-  border-radius: 8px;
 }
 
 .search__input-date {
@@ -274,7 +304,12 @@ body {
 }
 
 .search__input-guests {
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.search__guest {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .search__input-button {
@@ -286,6 +321,7 @@ body {
 
 .search__button-submit {
   width: 100%;
+  height: 100%;
   text-align: center;
   color: var(--background-light);
   border: none;
@@ -348,16 +384,21 @@ body {
   background-color: var(--background-main);
 }
 
-.places__images {
+.places__cards {
   position: relative;
   flex-wrap: nowrap;
   gap: 16px;
-  margin-bottom: 25px;
+}
+
+.places__card {
+  display: flex;
+  flex-direction: column;
 }
 
 .places__img-block {
   max-width: 295px;
   max-height: 295px;
+  margin-bottom: 24px;
   overflow: hidden;
 }
 
@@ -366,7 +407,7 @@ body {
   transition: 0.5s;
 }
 
-.places__img:hover {
+.places__card:hover .places__img {
   transform: scale(1.1);
 }
 
@@ -396,27 +437,21 @@ body {
 }
 
 .slider-right {
-  top: 50%;
+  top: 35%;
   left: 100%;
   transform: translate(-50%, -50%);
 }
 
-.homes__description {
-  flex-wrap: nowrap;
-  gap: 16px;
-}
-
-.homes__description-item {
+.homes__description-block {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 24px;
-  max-width: 295px;
-  max-height: 295px;
 }
 
 .places__name {
   color: var(--primary);
-  text-decoration: none;
 }
 
 .homes__location {
@@ -448,12 +483,11 @@ body {
   padding-bottom: 16px;
   background-color: var(--button-background);
   border-radius: 8px;
-  text-decoration: none;
   text-align: center;
   transition: background-color 300ms ease;
 }
 
-.destinations__menu-item:hover a {
+.destinations__menu-item:hover button {
   background-color: var(--primary);
   color: var(--background-light);
 }
@@ -472,7 +506,7 @@ body {
   transition: background-color 0.5s ease;
 }
 
-.destinations__img-block:hover .overlay {
+.places__card:hover .overlay {
   background-color: rgba(56, 56, 56, 0.4);
 }
 
@@ -488,7 +522,6 @@ body {
 
 .destinations__booking-submit {
   padding: 15px 25px;
-  text-decoration: none;
   background-color: var(--background-light);
   border: 1px solid var(--primary);
   border-radius: 8px;
@@ -496,27 +529,18 @@ body {
   font-size: 18px;
 }
 
-.destinations__img-block:hover .destinations__booking {
+.places__card:hover .destinations__booking {
   opacity: 1;
 }
 
 .slider-down {
-  top: 140%;
+  top: 115%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 }
 
 .arrow-down {
   transform: rotate(90deg);
-}
-
-.destinations__description {
-  flex-wrap: nowrap;
-  gap: 16px;
-}
-
-.destinations__description-item {
-  max-width: 295px;
 }
 
 .sign-up__container {
@@ -560,7 +584,6 @@ body {
 
 .sign-up__link {
   padding: 12px 32px;
-  text-decoration: none;
   text-align: center;
   font-size: 18px;
   color: var(--primary);
@@ -593,10 +616,6 @@ body {
   text-align: center;
 }
 
-.reviews__images {
-  margin-bottom: 0;
-}
-
 .reviews__img-block {
   position: relative;
   max-width: 400px;
@@ -620,7 +639,7 @@ body {
   transition: transform 300ms ease;
 }
 
-.reviews__img-block:hover .overlay-price {
+.places__card:hover .overlay-price {
   transform: translateY(-100%);
 }
 
@@ -632,6 +651,7 @@ body {
 .reviews__block {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 30px;
   max-width: 400px;
   padding: 24px;
@@ -653,7 +673,6 @@ body {
 }
 
 .reviews__place-name {
-  text-decoration: none;
   color: var(--primary);
 }
 
@@ -685,7 +704,6 @@ body {
 
 .reviews__content {
   font-size: 18px;
-  line-height: 21px;
   color: var(--main-text);
 }
 
@@ -719,12 +737,15 @@ body {
   margin-right: 8px;
 }
 
+.slider-reviews {
+  top: 27%;
+}
+
 .reviews__slider--mob-dots {
   display: none;
 }
 
 .footer-inf__link {
-  text-decoration: none;
   color: var(--background-light);
 }
 
@@ -806,11 +827,15 @@ body {
     padding: 80px 16px;
   }
 
+  .title {
+    margin-bottom: 80px;
+  }
+
   .top-section {
     padding-top: 0;
   }
 
-  .search__item {
+  .search__input-item {
     padding: 10px;
   }
 
@@ -822,32 +847,12 @@ body {
     margin-bottom: -40px;
   }
 
-  .places__images {
-    justify-content: space-around;
+  .places__img-block {
+    margin-bottom: 15px;
   }
 
-  .homes__description {
-    justify-content: space-around;
-  }
-
-  .destinations__description {
-    justify-content: space-around;
-  }
-
-  .homes__description-item {
-    gap: 10px;
-  }
-
-  .homes__title {
-    margin-bottom: 80px;
-  }
-
-  .destinations__title {
-    margin-bottom: 80px;
-  }
-
-  .places__images {
-    margin-bottom: 20px;
+  .homes__description-block {
+    gap: 4px;
   }
 
   .places__name {
@@ -858,12 +863,16 @@ body {
     font-size: 18px;
   }
 
-  .sign-up__container {
-    padding: 40px 16px;
+  .destinations__menu {
+    margin-bottom: 40px;
   }
 
-  .reviews__images {
-    margin-bottom: 0;
+  .slider-down {
+    top: 105%;
+  }
+
+  .sign-up__container {
+    padding: 15px 16px;
   }
 
   .reviews__place {
@@ -998,6 +1007,7 @@ body {
   }
 
   .search__input-item {
+    padding: 0;
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
@@ -1099,7 +1109,12 @@ body {
     order: 2;
   }
 
-  .places__images {
+  .places__card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .places__img-block {
+    align-self: center;
     margin-bottom: 8px;
   }
 
@@ -1107,20 +1122,8 @@ body {
     font-size: 12px;
   }
 
-  .homes__description-item {
-    gap: 4px;
-  }
-
   .homes__location {
     font-size: 12px;
-  }
-
-  .homes__kunerad {
-    display: none;
-  }
-
-  .homes__friendship {
-    display: none;
   }
 
   .slider-block {
@@ -1129,6 +1132,10 @@ body {
 
   .slider {
     padding: 8px 12px;
+  }
+
+  .slider-right {
+    top: 43%;
   }
 
   .arrow {
@@ -1157,16 +1164,12 @@ body {
     border: 1px solid var(--button-background);
   }
 
-  .destinations__norway {
-    display: none;
-  }
-
-  .destinations__iceland {
-    display: none;
+  .destinations__description {
+    font-size: 12px;
   }
 
   .slider-down {
-    top: 50%;
+    top: 43%;
     left: 100%;
     transform: translate(-50%, -50%);
   }
@@ -1252,7 +1255,6 @@ body {
 
   .sign-up__link--mob {
     display: flex;
-    text-decoration: none;
     color: var(--primary);
     font-size: 14px;
   }
@@ -1262,19 +1264,19 @@ body {
     background-color: var(--background-main);
   }
 
-  .reviews__images {
+  .reviews__card:nth-child(n + 2) {
+    display: none;
+  }
+
+  .reviews__card {
+    align-items: center;
+  }
+
+  .reviews__img-block {
     margin-bottom: 12px;
   }
 
   .slider-reviews {
-    display: none;
-  }
-
-  .reviews__kingkong {
-    display: none;
-  }
-
-  .reviews__rokoko {
     display: none;
   }
 
@@ -1323,12 +1325,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 8px;
+    margin-top: 32px;
   }
 
   .slider-dot {
     width: 8px;
     height: 8px;
-    margin-top: 32px;
     border: 1px solid var(--slider-color);
     border-radius: 50%;
   }
